@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة التسوق</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>قائمة التسوق</h1>
+
+        <!-- قسم إضافة المنتجات -->
+        <div class="card">
+            <h2>إضافة منتج جديد</h2>
+            <form id="add-item-form">
+                <input type="text" id="item-name" placeholder="اسم المنتج" required>
+<input type="number" id="item-quantity" step="0.01" value="1">
+<select id="item-unit">
+    <option value="كيلوغرام">كيلوغرام</option>
+    <option value="رطل">رطل</option>
+    <option value="غرام">غرام</option>
+    <option value="لتر">لتر</option>
+    <option value="كيس">كيس</option>
+</select>
+
+                
+                <input type="number" id="item-price" placeholder="السعر" min="0" step="0.01" required>
+                <button type="submit">إضافة</button>
+            </form>
+        </div>
+
+        <!-- قسم قائمة التسوق الحالية -->
+        <div class="card">
+            <h2 id="current-list-title">قائمة تسوق جديدة</h2>
+            <ul id="shopping-list">
+                <!-- سيتم إضافة المنتجات هنا عبر JavaScript -->
+            </ul>
+            <div class="total-price">
+                <strong>الإجمالي:</strong> <span id="total-price">0.00</span>
+            </div>
+            <div class="list-actions">
+                <button id="new-list-btn">قائمة جديدة</button>
+                <button id="save-list-btn">حفظ القائمة</button>
+                <button id="print-list-btn">طباعة القائمة</button>
+            </div>
+        </div>
+
+        <!-- قسم القوائم المحفوظة -->
+        <div class="card">
+            <h2>القوائم المحفوظة</h2>
+            <table id="saved-lists-table">
+                <thead>
+                    <tr>
+                        <th>التاريخ</th>
+                        <th>عدد المنتجات</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم إضافة القوائم المحفوظة هنا -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="datatables.min.js">
+    </script>
+    <script>
+        $('#saved-lists-table').DataTable({
+    responsive: true,
+    serverSide: false,
+    processing: true,
+    lengthChange: false,
+    deferRender: true,
+    keys: true,
+    colReorder: false,
+    searching: false,
+    paging: true,
+    info: false,
+    fixedHeader: true,
+    fixedColumns: true,
+    stateSave: true,
+    order: [[0, 'desc']],
+    pageLength: 10,
+    lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "الكل"]],
+    dom: 'Bfrtip',
+    language: {
+        search: 'بحث:',
+        paginate: {
+            first: 'الأول',
+            last: 'الأخير',
+            next: 'التالي',
+            previous: 'السابق'
+        }
+    },
+    columnDefs: [
+        {
+            targets: '_all', // Apply to all columns
+            orderable: false // Disable sorting for all columns
+        }
+    ]
+});
+    </script>
+    <div style="text-align:center;">
+      <p>hozaifa01</p>
+  <p>  امل ان يعينك التطبيق على تذكر اغراضك
+ </p>   </div>
+</body>
+</html>

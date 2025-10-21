@@ -1,0 +1,163 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+.remove-item-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-item-btn::before {
+    content: "حذف";
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #444;
+    text-align: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* نموذج الإضافة */
+#add-item-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#add-item-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#add-item-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-item-form button:hover {
+    background-color: #0056b3;
+}
+
+/* قائمة التسوق */
+#shopping-list {
+    list-style: none;
+    padding: 0;
+}
+
+#shopping-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#shopping-list li:last-child {
+    border-bottom: none;
+}
+
+#shopping-list .item-info {
+    flex-grow: 1;
+}
+
+#shopping-list .item-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #dc3545;
+}
+
+.total-price {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #eee;
+}
+
+.list-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.list-actions button {
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.list-actions button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#print-list-btn {
+    border-color: #28a745;
+    color: #28a745;
+}
+#print-list-btn:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* جدول القوائم المحفوظة */
+#saved-lists-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#saved-lists-table th, #saved-lists-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#saved-lists-table th {
+    background-color: #f8f9fa;
+}
+
+#saved-lists-table .action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.view-btn { background-color: #17a2b8; }
+.delete-btn { background-color: #dc3545; }
